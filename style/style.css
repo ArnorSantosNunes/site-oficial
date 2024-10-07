@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
 }
 body{
     background: linear-gradient(to right, #000000,#0037ff);
@@ -62,12 +63,48 @@ nav{
 main{
 
     border: 1px solid red;
-    height: 680px;
+    height: 980px;
     margin-left: 10%;
     margin-right: 10%;
 }
 section{
-    border: 1px solid red;
+    padding-top: 50px;
+    border: 1px solid rgb(255, 196, 0);
     width: 100%;
-    height: 350px;
+    height: 400px;
+}
+article{
+    border: 1px solid rgb(0, 242, 255); 
+    width: 100%;
+    height: 380px;
+    
+}
+.redes-sociais{
+    width: 100%;
+    border: 1px solid rgb(8, 0, 255);
+    height: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 150px;
+}
+.link{
+    text-align: center;
+    color: #ffffff;
+}
+.link img{
+    height: 50px;
+}
+.link a {
+    color: white;
+}
+.scroll{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(8, 0, 255);
+    color: #ffffff;
+    font-size: 60px;
+    width: 100%;
+    height: 75%;
 }
