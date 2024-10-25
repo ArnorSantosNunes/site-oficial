@@ -56,25 +56,61 @@
                 <h1 style="word-wrap: break-word;color: #d9d9d9; font-size: 30px;">wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww.</h1>
             </div>
             <div class="container-carrossel">
-                <div class="carrossel">
-                    <div class="img-esqueleto"><img src="img/icone-javascript1.png"></div>
-                    <div class="text-esqueleto"><h2>JavaScript</h2></div>
+                <div class="slides-container">
+                    <div class="carrossel">
+                            <div class="img-esqueleto"><img src="img/icone-javascript1.png"></div>
+                            <div class="text-esqueleto"><h2>JavaScript</h2></div>
+                        </div>
+                        <div class="carrossel">
+                            <div class="img-esqueleto"><img src="img/icone-nodejs.png"></div>
+                            <div class="text-esqueleto"><h2>Node.js</h2></div>
+                        </div>
+                        <div class="carrossel">
+                            <div class="img-esqueleto"><img src="img/icone-html.png"></div>
+                            <div class="text-esqueleto"><h2>Html</h2></div>
+                        </div>
+                        <div class="carrossel">
+                            <div class="img-esqueleto"><img src="img/icone-css.png"></div>
+                            <div class="text-esqueleto"><h2>Css</h2></div>
+                    </div>
+                    <!-- === -->
+                    <div class="carrossel">
+                        <div class="img-esqueleto"><img src="img/instagram.webp"></div>
+                        <div class="text-esqueleto"><h2>JavaScript</h2></div>
+                    </div>
+                    <div class="carrossel">
+                        <div class="img-esqueleto"><img src="img/link-edin.png"></div>
+                        <div class="text-esqueleto"><h2>Node.js</h2></div>
+                    </div>
+                    <div class="carrossel">
+                        <div class="img-esqueleto"><img src="img/git-hub.png"></div>
+                        <div class="text-esqueleto"><h2>Html</h2></div>
+                    </div>
+                    <div class="carrossel">
+                        <div class="img-esqueleto"><img src="img/D_2.webp"></div>
+                        <div class="text-esqueleto"><h2>Css</h2></div>
                 </div>
-                <div class="carrossel">
-                    <div class="img-esqueleto"><img src="img/icone-nodejs.png"></div>
-                    <div class="text-esqueleto"><h2>Node.js</h2></div>
                 </div>
-                <div class="carrossel">
-                    <div class="img-esqueleto"><img src="img/icone-html.png"></div>
-                    <div class="text-esqueleto"><h2>Html</h2></div>
-                </div>
-                <div class="carrossel">
-                    <div class="img-esqueleto"><img src="img/icone-css.png"></div>
-                    <div class="text-esqueleto"><h2>Css</h2></div>
-                </div>
+                
             </div>
          </div>
     </main>
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        function updateSlidePosition() {
+            const slidesContainer = document.querySelector('.slides-container');
+            slidesContainer.style.transform = `translateX(${-currentIndex * 418}px)`; 
+        }
+
+        
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % (totalSlides - 5); 
+            updateSlidePosition();
+        }, 3000); 
+    </script>
     <script src="js/script.js"></script>
 </body>
 </html>
