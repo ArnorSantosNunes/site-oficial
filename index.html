@@ -163,8 +163,8 @@
                             <h5 style="color: #d9d9d9; font-size: 45px; ;">Site Web Portfólio</h5>
                             <br>
                             
-                        <p style="color: #d9d9d9; font-size: 25px;">
-                            O projeto de calculadora é uma aplicação web interativa que permite ao usuário realizar operações matemáticas básicas, como adição, subtração, multiplicação e divisão. Além dessas funções, a calculadora oferece suporte a números decimais e armazena o histórico de cálculos. O objetivo é proporcionar uma ferramenta prática e eficiente para atender às necessidades de diferentes usuários. 
+                        <p style="color: #d9d9d9; font-size: 25px;"> 
+                            Desenvolvi um site para compartilhar experiências de programação.
                             </p>
                            <br> 
                         </div>
@@ -199,31 +199,40 @@
                             <h6 style="color: deepskyblue; font-size: 20px;">- Css</h6>
                             <h6 style="color: gold; font-size: 20px;">- JavaScript</h6></div>
                             <div class="botao"><button>Ver Projeto</button></div>
-                            
-                            
                         </div>
                     </div>
                 </div>
                 
             </div>
+
           </div>
+          <!-- pagina contato -->
+           <div class="container-contato">
+            <div class="titulo-contato">
+                <h1 style="color: #d9d9d9; font-size: 45px;">Contato</h1>
+            </div>
+            <div class="estrutura-contato">
+                <div class="img-contato">
+                    <img src="img/img-arnor.png" >
+                </div>
+                <div class="formulario-contato">
+                    <div class="container">
+                        <div class="text-fala-comigo"><h1 style="color: white;">Fala comigo</h1></div>
+                        <div class="campo-nome-mensagem">
+                            <form id="messageForm">
+                            <input type="text" id="name" placeholder="Digite seu nome" required>
+                            <textarea id="message" placeholder="Digite sua mensagem" required></textarea>
+                            <button type="submit">Enviar</button>
+                        </form>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+
+            </div>
+           </div>
     </main>
-    <script>
-        let currentIndex = 0;
-        const slides = document.querySelectorAll('.slide');
-        const totalSlides = slides.length;
-
-        function updateSlidePosition() {
-            const slidesContainer = document.querySelector('.slides-container');
-            slidesContainer.style.transform = `translateX(${-currentIndex * 418}px)`; 
-        }
-
-        
-        setInterval(() => {
-            currentIndex = (currentIndex + 1) % (totalSlides - 5); 
-            updateSlidePosition();
-        }, 3000); 
-    </script>
     <script src="js/script.js"></script>
 </body>
 </html>

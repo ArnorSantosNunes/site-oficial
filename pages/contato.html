@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receber Mensagens</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        #messageList {
+    max-height: 300px; /* Limite de altura para a lista de mensagens */
+    overflow-y: auto; /* Adiciona uma barra de rolagem quando necessário */
+    padding-right: 10px; /* Espaço para que a rolagem não esconda conteúdo */
+}
+
+.message {
+    word-wrap: break-word; /* Quebra o texto longo para caber na caixa */
+    padding: 10px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    position: relative;
+}
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .message {
+            padding: 10px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .message button {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .message button:hover {
+            background-color: #c82333;
+        }
+
+        button#clearMessages {
+            background-color: #ffc107;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto;
+        }
+
+        button#clearMessages:hover {
+            background-color: #e0a800;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Mensagens Recebidas</h1>
+        <div id="messageList"></div>
+        <button id="clearMessages">Limpar Mensagens</button>
+        <button style="display: none;" id="continueSending">Continuar Enviando</button>
+    </div>
+
+    <script>
+        function renderMessages() {
+            const messageList = document.getElementById('messageList');
+            const messages = JSON.parse(localStorage.getItem('mensagens')) || [];
+
+            messageList.innerHTML = ''; // Limpa a lista antes de adicionar novas mensagens
+
+            messages.forEach((msg, index) => {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = 'message';
+                messageDiv.innerHTML = `
+                    <strong>${msg.name}:</strong> ${msg.message}
+                    <button class="remove">Remover</button>
+                `;
+                messageList.appendChild(messageDiv);
+
+                const removeButton = messageDiv.querySelector('.remove');
+                removeButton.addEventListener('click', function() {
+                    messages.splice(index, 1); // Remove a mensagem do array
+                    localStorage.setItem('mensagens', JSON.stringify(messages)); // Atualiza o localStorage
+                    renderMessages(); // Re-renderiza a lista de mensagens
+                });
+            });
+        }
+
+        document.getElementById('clearMessages').addEventListener('click', function() {
+            localStorage.removeItem('mensagens'); // Limpa todas as mensagens do localStorage
+            renderMessages(); // Re-renderiza a lista de mensagens
+        });
+
+        document.getElementById('continueSending').addEventListener('click', function() {
+            window.open('index.html', '_blank'); // Abre a página de envio em uma nova aba
+        });
+
+        window.onload = renderMessages; // Renderiza as mensagens ao carregar
+    </script>
+</body>
+</html>
