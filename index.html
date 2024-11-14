@@ -9,8 +9,9 @@
 <body>
     <header>
         <nav>
+            
             <div class="container-logo">
-                <h1 style="color: #d9d9d9; font-size: 45px;">Arnor Nunes</h1>
+                <h1>Arnor Nunes</h1>
             </div>
             <div class="container-menu">
                 <ul>
@@ -21,11 +22,32 @@
                 </ul>
                 
             </div>
+
+            <div class="menu-icone" >
+                <button onclick="showMenu()">&#9776;</button> </div> 
+            
         </nav>
+        
     </header>
+    <div class="overlay" id="overlay" onclick="hideMenu()">
+        <div class="menu-page" onclick="event.stopPropagation()">
+            <button onclick="hideMenu()">X</button>
+            <nav>
+                <ul>
+                <li><a href="#"><h4>Inicio</h4></a></li>
+                <li><a href="#"><h4>Sobre</h4></a></li>
+                <li><a href="#"><h4>Projetos</h4></a></li>
+                <li><a href="#"><h4>Contato</h4></a></li>
+                </ul>
+
+            </nav>
+        </div>
+    </div>
+   
+        
     <main>
-        <section>
-            <h1 style="color: #d9d9d9; font-size: 95px; text-align: center;">Olá, Visitante! <br> 
+        <section class="titulo-ola-visitante">
+            <h1 style="color: #d9d9d9; ; text-align: center;  overflow-wrap: break-word;">Olá, Visitante! <br> 
                 Meu Nome é Ârnor <br>
                 Desenvolvedor Full-Stack</h1>
         </section>
@@ -53,45 +75,42 @@
          <div class="container-sobre-mim">
             <div class="titulo-sobre-mim">
                 <h1 style="color: #d9d9d9; font-size: 45px;">Sobre Mim</h1>
-                <h1 style="word-wrap: break-word;color: #d9d9d9; font-size: 35px;">Sou um programador full-stack apaixonado por tecnologia, com uma trajetória que começou no desenvolvimento de jogos 3D utilizando a Unreal Engine como hobby. Com o tempo, descobri o fascinante mundo do desenvolvimento web e decidi expandir minhas habilidades nesse campo. Hoje, programo sistemas com o objetivo de me tornar um profissional na área, sempre buscando aprender e aplicar novas tecnologias para criar soluções inovadoras e eficientes.</h1>
+                <h3 style="word-wrap: break-word;color: #d9d9d9; font-size: 30px;">Sou um programador full-stack apaixonado por tecnologia, com uma trajetória que começou no desenvolvimento de jogos 3D utilizando a Unreal Engine como hobby. Com o tempo, descobri o fascinante mundo do desenvolvimento web e decidi expandir minhas habilidades nesse campo. Hoje, programo sistemas com o objetivo de me tornar um profissional na área, sempre buscando aprender e aplicar novas tecnologias para criar soluções inovadoras e eficientes.</h3>
             </div>
             <div class="container-carrossel">
                 <div class="slides-container">
                     <div class="carrossel">
-                            <div class="img-esqueleto"><img src="img/icone-javascript1.png"></div>
-                            <div class="text-esqueleto"><h2>JavaScript</h2></div>
-                        </div>
-                        <div class="carrossel">
-                            <div class="img-esqueleto"><img src="img/img-python.png"></div>
-                            <div class="text-esqueleto"><h2>Python</h2></div>
-                        </div>
-                        <div class="carrossel">
-                            <div class="img-esqueleto"><img src="img/img-postgresql-removebg-preview.png"></div>
-                            <div class="text-esqueleto"><h2>PostgreSQL</h2></div>
-                        </div>
-                        <div class="carrossel">
-                            <div class="img-esqueleto"><img src="img/img-django-removebg-preview.png"></div>
-                            <div class="text-esqueleto"><h2>Django</h2></div>
-                    </div>
-                    <!-- === -->
-                    <div class="carrossel">
-                        <div class="img-esqueleto"><img src="img/img-react.png"></div>
-                        <div class="text-esqueleto"><h2>React</h2></div>
+                        <img src="img/icone-javascript1.png" alt="JavaScript Icon">
+                        <h2>JavaScript</h2>
                     </div>
                     <div class="carrossel">
-                        <div class="img-esqueleto"><img src="img/img-brootstrap.png"></div>
-                        <div class="text-esqueleto"><h2>Brootstrap</h2></div>
+                        <img src="img/img-python.png" alt="Python Icon">
+                        <h2>Python</h2>
                     </div>
                     <div class="carrossel">
-                        <div class="img-esqueleto"><img src="img/icone-html.png"></div>
-                        <div class="text-esqueleto"><h2>Html</h2></div>
+                        <img src="img/img-postgresql-removebg-preview.png" alt="React Icon">
+                        <h2>PostgreSQL</h2>
                     </div>
                     <div class="carrossel">
-                        <div class="img-esqueleto"><img src="img/icone-css.png"></div>
-                        <div class="text-esqueleto"><h2>Css</h2></div>
-                </div>
+                        <img src="img/img-django-removebg-preview.png" alt="Django Icon">
+                        <h2>Django</h2>
+                    </div>
+                    <div class="carrossel">
+                        <img src="img/img-react.png" alt="React Icon">
+                        <h2>React</h2>
+                    </div>
+                    <div class="carrossel">
+                        <img src="img/icone-css.png" alt="CSS Icon">
+                        <h2>CSS</h2>
+                    </div>
+                    
+                    <div class="carrossel">
+                        <img src="img/icone-html.png" alt="HTML Icon">
+                        <h2>HTML</h2>
+                    </div>
                 </div>
                 
+               
             </div>
          </div>
          <!-- Meus Projetos -->
@@ -117,7 +136,8 @@
                            <br> 
                         </div>
                         <div class="container-informacoes-botao">
-                            <div class="informacoes"><h6 style="color: crimson; font-size: 20px;">- Html</h6>
+                            <div class="informacoes">
+                                <h6 style="color: crimson; font-size: 20px;">- Html</h6>
                             <h6 style="color: deepskyblue; font-size: 20px;">- Css</h6>
                             <h6 style="color: gold; font-size: 20px;">- JavaScript</h6></div>
                             <div class="botao"><button>Ver Projeto</button></div>
@@ -163,7 +183,7 @@
                             <h5 style="color: #d9d9d9; font-size: 45px; ;">Site Web Portfólio</h5>
                             <br>
                             
-                        <p style="color: #d9d9d9; font-size: 25px;"> 
+                        <p style="color: #d9d9d9; font-size: 25px;">
                             Desenvolvi um site para compartilhar experiências de programação.
                             </p>
                            <br> 
@@ -178,6 +198,7 @@
                         </div>
                     </div>
                 </div>
+                
                 <div class="projetos">
                     <div class="img-do-projeto">
 
@@ -212,7 +233,9 @@
                 <h1 style="color: #d9d9d9; font-size: 45px;">Contato</h1>
             </div>
             <div class="estrutura-contato">
+                
                 <div class="img-contato">
+                    
                     <img src="img/img-arnor.png" >
                 </div>
                 <div class="formulario-contato">
@@ -232,7 +255,9 @@
 
             </div>
            </div>
+           
     </main>
+    <div class="animated-border animated-3">BEM VINDOS</div>
     <script src="js/script.js"></script>
 </body>
 </html>

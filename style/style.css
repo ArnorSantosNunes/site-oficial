@@ -6,17 +6,53 @@
 }
 body{
     background: linear-gradient(to right, #000000,#0037ff);
+    font-family: Arial, sans-serif;
 }
+
+  
+  
 /* menu --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* textos....... */
+.titulo-ola-visitante h1{
+    font-size: 95px;
+}
+.container-logo h1{
+    
+    font-size: 45px;  
+    white-space: nowrap; 
+    font-size: clamp(2rem, 2vw, 3rem); 
+    padding: 2%;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #000000, #000000, #ffffff, #00ffed);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientText 5s infinite;
+}
+@keyframes gradientText {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+/* textos...... */
 header{
-     border: 1px solid red; 
-    height: 180px;
+     /* border: 1px solid red;  */
+     padding-top: 20px;
+    height: 120px;
     margin-left: 10%;
     margin-right: 10%;
     
 }
-nav{
-    border: 2px solid rgb(255, 137, 255);
+header nav{
+    /* border: 2px solid rgb(255, 137, 255); */
     display: flex;
     align-items: center;
     width: 100%;
@@ -24,7 +60,9 @@ nav{
     justify-content: space-between;
 }
 .container-logo{
-    border: 2px solid rgb(6, 154, 25);
+    display: flex;
+    
+    /* border: 2px solid rgb(6, 154, 25); */
     display: flex;
     align-items: center;
     width: 20%;
@@ -33,7 +71,7 @@ nav{
 
 }
 .container-menu{
-    border: 2px solid rgb(0, 5, 1);
+    /* border: 2px solid rgb(0, 5, 1); */
     width: 80%;
     height: 100%;
     display: flex;
@@ -59,30 +97,98 @@ nav{
 .container-menu ul li a{
     text-decoration: none;
 }
+.menu-icone{
+    display: none;
+}
+
+@media(max-width: 1072px) {
+    .container-menu ul{
+        display: none;
+
+    }
+    .menu-icone{
+        display: block;
+    } 
+}
+/* Estilo do menu mobile ....................................................................................*/
+.menu-page{
+    background-color: rgb(0, 0, 0);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 99999;
+    width: 70%;
+    
+}
+.menu-page nav ul li a{
+    color: white;
+    font-size: 25px;
+    padding: 40px 4%;
+    text-align: end;
+    text-align: center;
+}
+.menu-page nav ul li{
+    border: 1px solid #333;
+    border-radius: 15px;
+    margin: 5px;
+}
+.overlay{
+    background-color: #000000af;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 88888;
+    display: none;
+}
+.abrir-menu{
+    background-color: #000000af;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 88888;
+}
+.show {
+    display: flex;
+  }
+  .menu-icone button{
+    color: white;
+    font-size: 20PX;
+    padding: 12px;
+    
+  }
 /* main conteudo ola visitante! --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
 main{
 
-    border: 1px solid rgb(195, 0, 255);
-    height: 4400px;
+    /* border: 1px solid rgb(195, 0, 255); */
+    height: 100%;
     margin-left: 10%;
     margin-right: 10%;
 }
 section{
     padding-top: 50px;
-    border: 1px solid rgb(255, 196, 0);
+    /* border: 1px solid rgb(255, 196, 0); */
     width: 100%;
-    height: 400px;
+    height: auto;
 }
 article{
-    border: 1px solid rgb(0, 242, 255); 
+    /* border: 1px solid rgb(0, 242, 255);  */
     width: 100%;
-    height: 380px;
+    height: auto;
     
 }
 .redes-sociais{
+    max-width: 100%; /* Impede que o filho ultrapasse a largura do pai */
+  max-height: 100%; /* Impede que o filho ultrapasse a altura do pai */
+  overflow: hidden; /* Se necessário, aplica no filho também */
     width: 100%;
-    border: 1px solid rgb(8, 0, 255);
-    height: 25%;
+    /* border: 1px solid rgb(8, 0, 255); */
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -102,91 +208,155 @@ article{
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid rgb(8, 0, 255);
+    /* border: 1px solid rgb(8, 0, 255); */
     color: #ffffff;
     font-size: 60px;
     width: 100%;
     height: 75%;
 }
 /* sobre-mim -------------------------------------------------------------------------------------------------------------------------------------------------------------- */
-.container-sobre-mim{
-    border: 3px solid rgb(162, 147, 225);
+/* textos....... */
+.container-sobre-mim .container-carrossel .slides-container .carrossel h2{
+    color: white;
+}
+/* textos...... */
+/* Container principal */
+        .container-sobre-mim {
+            /* border: 3px solid rgb(162, 147, 225); */
+            width: 100%;
+            height: auto;
+            
+        }
+
+        /* Título */
+        .titulo-sobre-mim {
+            /* border: 1px solid rgb(255, 0, 200); */
+            width: 100%; 
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .titulo-sobre-mim h1 {
+            color: #d9d9d9;
+        }
+
+/* Estilos básicos para o carrossel */
+.container-carrossel {
     width: 100%;
-    height: 800px;
+    max-width: 1510px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    /* border: 1px solid #ddd; */
+    border-radius: 8px;
 }
-.titulo-sobre-mim{
-    border: 1px solid rgb(255, 0, 200);
-    width: 100%; 
-    height: 350px;
-}
-.container-carrossel{
-     overflow: hidden; 
-            width: 100%; /* Largura total para 3 cards (300px cada) */
-            height: 400px; /* Altura do slider */
-            position: relative;
-            /* --- */
-    border: 1px solid rgb(0, 255, 229);
+
+/* Container das slides */
+.slides-container {
     display: flex;
+    transition: transform 0.5s ease-in-out;
 }
-/* carrossel */
-.slides-container{
-    
+
+/* Cada slide individual */
+.carrossel {
+    min-width: 33.33%; /* Mostra três slides ao mesmo tempo */
+    box-sizing: border-box;
     display: flex;
-            transition: transform 0.5s ease;
-            gap: 168px;
-}
-.container-carrossel{
-    border: 1px solid #d9d9d9;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    
-}
-.carrossel{
-    border: 1px solid #d9d9d9;
-    color: #d9d9d9;
-    text-align: center;
-    width: 250px;
-    height: 300px;
-    border-radius: 15px;
     justify-content: center;
-    align-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    /* background-color: #f7f7f7; */
 }
-.carrossel img{
-    height: 150px;
+
+/* Estilo do conteúdo do card */
+.carrossel img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 10px;
 }
-.carrossel .text-esqueleto{
-    padding-top: 20px;
+
+.carrossel h2 {
+    margin: 0;
+    font-size: 22px;
+    color: #333;
+}
+
+.carrossel p {
+    font-size: 14px;
+    color: #555;
+}
+
+
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .carrossel img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .carrossel h2 {
+        font-size: 18px;
+    }
+
+    .carrossel p {
+        font-size: 12px;
+    }
 }
 /* Meus Projetos.............................................................................................................. */
 .container-meus-projetos{
-    border: 3px solid rgb(162, 147, 225);
+    /* border: 3px solid rgb(162, 147, 225); */
     width: 100%;
-    height: 2150px;
+    height: auto;
+    
+    
 }
 .titulo-meus-projetos{
-    border: 1px solid rgb(255, 0, 0);
-    height: 100px;
+    /* border: 1px solid rgb(255, 0, 0); */
+    height: auto;
     width: 100%;
+    
 }
 .estrutura-projetos{
-    border: 1px solid rgb(0, 8, 15);
-    height: 100%;
+    padding: 20px;
+    /* border: 1px solid rgb(0, 8, 15); */
+    height: auto;
     width: 100%;
+    
 }
 .projetos{
     border-radius: 15px;
-   padding: 20px;
-    height: 500px;
-    border: 1px solid rgb(0, 145, 255);
+   
+   height: auto;
+     border: 1px solid rgb(0, 145, 255); 
     display: flex;
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
 }
 .container-informacoes-botao{
     display: flex;
     justify-content: space-between;
 }
+.container-informacoes-botao .informacoes {
+    display: flex;
+    gap: 10px;
+}
 .img-do-projeto{
     width: 35%;
+    
     
    
    
@@ -194,12 +364,14 @@ article{
 .img-do-projeto img{
     
     border-radius: 20px;
-    width: 500px;
+    width: 80%;
     height: 100%;
     box-shadow: 0 0 5px rgb(255, 255, 255),
-    0 0 25px rgb(255, 255, 255); 
+    0 0 25px rgb(255, 255, 255);
+     
     
 }
+
 .text-do-projeto{
     padding: 15px;
     width: 75%;
@@ -207,6 +379,7 @@ article{
 }
 /* botao */
 .container-informacoes-botao button{
+    width: 200px;
     background: linear-gradient(to right, #00ffd9,#0026ff);
     padding: 12px 28px;
     border-radius: 40px;
@@ -222,35 +395,61 @@ article{
 /* contato ..................................................................................................... */
 .estrutura-contato{
     display: flex;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     width: 100%;
-    height: 500px;
-    justify-content: space-around;
+    height: auto;
+    justify-content: center;
     align-items: center;
+    /* flex-direction: column; */
+    gap: 30px;
+    margin-top: 20px;
+    padding: 30px;
 }
 .formulario-contato .container {
-    min-width: 400px;
-    width: 70%;
-    height: 400px;
+    min-width: 250px;
+    width: 100%;
+    height: auto;
+    padding: 40px 30px;
     background: linear-gradient(to right, #316fff,#0026ff);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     display: flex;
     align-items: center;
-    flex-direction: column; /* Alinha os elementos em coluna */
+    flex-direction: column; 
 }
 .estrutura-contato .img-contato{
-    width: 300px;
-    border: 2px solid red;
-}
-.estrutura-contato .formulario-contato{
-    display: flex;
-    width: 900px;
-    border: 2px solid rgb(255, 255, 255);
+    width: 50%;
+    /* border: 2px solid red; */
+    
     align-items: center;
     justify-content: center;
+    display: flex;
+}
+.estrutura-contato .img-contato img{
+    animation: pulse 10s infinite;
+}
+@keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+  }
+.estrutura-contato .formulario-contato{
+    display: flex;
+    width: 50%;
+    /* border: 2px solid rgb(255, 255, 255); */
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+
+    max-width: 100%; /* Impede que o filho ultrapasse a largura do pai */
+  max-height: 100%; /* Impede que o filho ultrapasse a altura do pai */
+  overflow: hidden; /* Se necessário, aplica no filho também */
 }
 .campo-nome-mensagem form {
+    
         width: 100%;
         display: flex;
         flex-direction: column; /* Alinha os elementos em coluna */
@@ -298,3 +497,113 @@ width: 100%;
 .campo-nome-mensagem form button:hover{
     background: linear-gradient(to right, #00ff2a,#2d8903);
 }
+.animated-3 {
+    background: linear-gradient(90deg, #ff007c, #00ffed, #ffcc00, #ff007c);
+    background-size: 300% 300%;
+    animation: gradientWave 5s infinite;
+    height: 40px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(255, 255, 255);
+  }
+
+  @keyframes gradientWave {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+@media (max-width: 1072px) {
+    /* menu e container da pagina */
+    .container-menu{
+        display: none;
+    }
+    .container-logo{
+        width: 80%;
+        
+    }
+    main{
+        margin-left: 0;
+        margin-right: 0; 
+    }
+    header{
+        margin-left: 0;
+        margin-right: 0; 
+    }
+    .titulo-ola-visitante h1 {
+        font-size: 60px;
+    }
+    .estrutura-contato{
+        flex-direction: column;
+        
+    }
+    .estrutura-contato .formulario-contato{
+        width: 100%;
+    }
+    
+    /* meus projetos */
+
+}
+@media (max-width: 772px) {
+    .projetos{
+        display: flex;
+        flex-direction: column;
+        padding-top: 20px;
+    }
+    .container-informacoes-botao{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .container-informacoes-botao .informacoes {
+        margin-bottom: 20px;
+    }
+    .img-do-projeto {  
+        width: 60%; 
+    }
+    .text-do-projeto{
+        
+        width: 100%;
+        
+    }
+}
+@media (max-width: 572px){
+    .redes-sociais{
+        gap: 90px;
+    }
+}
+
+@media (max-width: 420px){
+    /* main conteudo visitante */
+    .redes-sociais{
+        gap: 50px;
+    }
+    .titulo-ola-visitante h1 {
+        font-size: 40px;
+    }
+}
+
+  .container-menu ul li {
+    background: linear-gradient(90deg, #ffffff, #00ffed, #ffffff, #37fff5);
+    background-size: 300% 300%;
+    animation: gradientWave 5s infinite;
+  }
+
+  @keyframes gradientWave {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
